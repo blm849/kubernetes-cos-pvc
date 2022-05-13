@@ -1,3 +1,8 @@
+# New 
+locals {
+  pvc_nginx_claim_name = var.basename
+}
+
 data "ibm_resource_group" "group" {
   name = var.resource_group
 }
@@ -68,7 +73,7 @@ resource "kubernetes_persistent_volume_claim" "pvc" {
       "ibm.io/auto-create-bucket" : "true"
       "ibm.io/auto-delete-bucket" : "false"
       "ibm.io/auto_cache" : "true"
-      "ibm.io/bucket" : var.bucket_name
+      # "ibm.io/bucket" : var.bucket_name
       "ibm.io/secret-name" : kubernetes_secret.cos.metadata[0].name
       "ibm.io/set-access-policy" : "true"
     }
