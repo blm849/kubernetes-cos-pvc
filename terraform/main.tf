@@ -1,4 +1,3 @@
-# New 
 locals {
   pvc_nginx_claim_name = var.basename
 }
@@ -59,10 +58,6 @@ resource "kubernetes_secret" "cos" {
     secret-key      = ibm_resource_key.cos_writer.credentials["cos_hmac_keys.secret_access_key"]
     res-conf-apikey = ibm_resource_key.cos_manager.credentials.apikey
   }
-}
-
-locals {
-  pvc_nginx_claim_name = var.basename
 }
 
 resource "kubernetes_persistent_volume_claim" "pvc" {
@@ -199,7 +194,7 @@ resource "kubernetes_ingress" "example_ingress" {
           }
         }
       }
-    }
+    } 
   }
 }
 
