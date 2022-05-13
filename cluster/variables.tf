@@ -20,5 +20,5 @@ variable "cluster_flavor" {
   default = "cx2.2x4"
 }
 variable "kube_version" {
-  default = "1.19"
+  default = "1.21.12"
 }
